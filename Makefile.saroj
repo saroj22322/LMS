@@ -1,0 +1,11 @@
+#Created by Saroj
+
+
+lms.out: main.o htc.o
+	gcc htc.o main.o
+
+main.o: main.c
+	gcc -c main.c
+
+htc.o: htc.c htc.h
+	gcc -c htc.c
