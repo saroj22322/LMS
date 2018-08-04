@@ -1,11 +1,14 @@
 #Created by Saroj
 
+SRC = main.c htc.c
+OBJ = $(SRC:%.c=%.o)
+
 target = LMS
 CC = gcc
 Compile.o = $(CC) -c
 
-$(target): main.o htc.o
-	$(CC) htc.o main.o -o $@
+$(target): $(OBJ)
+	$(CC) $(OBJ) -o $@
 
 main.o: main.c
 	$(Compile.o) main.c
