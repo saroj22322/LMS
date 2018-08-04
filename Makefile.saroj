@@ -1,10 +1,20 @@
 #Created by Saroj
 
-Compile.o = gcc -c
+target = LMS
+CC = gcc
+Compile.o = $(CC) -c
 
-lms.out: main.o htc.o
-	gcc htc.o main.o -o LMS
+$(target): main.o htc.o
+	$(CC) htc.o main.o -o $@
 
-%.o: %.c
+main.o: main.c
+	$(Compile.o) main.c
+
+%.o: %.c %.h
 	$(Compile.o) $<
+
+.PHONY: clean
+
+clean:
+	$(RM) main.o htc.o
 
