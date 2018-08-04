@@ -1,11 +1,10 @@
 #Created by Saroj
 
+Compile.o = gcc -c
 
 lms.out: main.o htc.o
-	gcc htc.o main.o
+	gcc htc.o main.o -o LMS
 
-main.o: main.c
-	gcc -c main.c
+%.o: %.c
+	$(Compile.o) $<
 
-htc.o: htc.c htc.h
-	gcc -c htc.c
