@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <windows.h>
+#include <conio.h>
 
 //Global Variable:
 COORD coordinate={0,0};
